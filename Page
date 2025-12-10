@@ -1,0 +1,869 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>Estudio [TU APELLIDO] & Asociados | Contabilidad y Economía</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Estudio contable y económico especializado en Pymes, profesionales y emprendedores. Contadora Pública + Economista. Asesoramiento integral y lenguaje claro.">
+  <style>
+    :root {
+      --color-bg: #f5f7fb;
+      --color-primary: #1f4f8f;
+      --color-primary-soft: #e3ecfb;
+      --color-accent: #28a574;
+      --color-text-main: #1f2933;
+      --color-text-soft: #6b7280;
+      --color-white: #ffffff;
+      --max-width: 1080px;
+      --radius: 10px;
+      --shadow-soft: 0 10px 25px rgba(15, 23, 42, 0.08);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: var(--color-bg);
+      color: var(--color-text-main);
+      line-height: 1.6;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    header {
+      background: var(--color-white);
+      box-shadow: 0 1px 4px rgba(15, 23, 42, 0.06);
+      position: sticky;
+      top: 0;
+      z-index: 20;
+    }
+
+    .nav {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 0.75rem 1.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .logo {
+      font-weight: 700;
+      font-size: 1.1rem;
+      color: var(--color-primary);
+    }
+
+    .logo span {
+      font-weight: 400;
+      font-size: 0.85rem;
+      color: var(--color-text-soft);
+      margin-left: 0.4rem;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 1rem;
+      font-size: 0.95rem;
+    }
+
+    .nav-links a {
+      color: var(--color-text-soft);
+      padding: 0.3rem 0.5rem;
+      border-radius: 999px;
+      transition: background 0.2s, color 0.2s;
+    }
+
+    .nav-links a:hover {
+      background: var(--color-primary-soft);
+      color: var(--color-primary);
+    }
+
+    .btn-nav {
+      padding: 0.35rem 0.9rem;
+      border-radius: 999px;
+      background: var(--color-primary);
+      color: var(--color-white) !important;
+      font-size: 0.9rem;
+      font-weight: 600;
+      box-shadow: 0 4px 12px rgba(31, 79, 143, 0.35);
+    }
+
+    main {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 1.5rem;
+    }
+
+    section {
+      margin: 2.5rem 0;
+    }
+
+    /* Hero */
+    .hero {
+      display: grid;
+      grid-template-columns: 1.2fr 1fr;
+      gap: 2rem;
+      align-items: center;
+    }
+
+    .hero-tag {
+      display: inline-block;
+      font-size: 0.85rem;
+      background: var(--color-primary-soft);
+      color: var(--color-primary);
+      padding: 0.25rem 0.7rem;
+      border-radius: 999px;
+      margin-bottom: 0.9rem;
+      font-weight: 600;
+    }
+
+    .hero h1 {
+      font-size: clamp(1.9rem, 3vw, 2.4rem);
+      margin-bottom: 0.7rem;
+    }
+
+    .hero h1 span {
+      color: var(--color-primary);
+    }
+
+    .hero-subtitle {
+      color: var(--color-text-soft);
+      font-size: 0.98rem;
+      margin-bottom: 1rem;
+    }
+
+    .hero-benefits {
+      list-style: none;
+      margin-bottom: 1.4rem;
+    }
+
+    .hero-benefits li {
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+      font-size: 0.94rem;
+      color: var(--color-text-soft);
+    }
+
+    .hero-benefits li::before {
+      content: "✔";
+      color: var(--color-accent);
+      font-size: 0.9rem;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.8rem;
+      align-items: center;
+    }
+
+    .btn-main {
+      padding: 0.7rem 1.4rem;
+      border-radius: 999px;
+      background: var(--color-primary);
+      color: var(--color-white);
+      font-weight: 600;
+      border: none;
+      cursor: pointer;
+      font-size: 0.95rem;
+      box-shadow: 0 8px 20px rgba(31, 79, 143, 0.4);
+    }
+
+    .btn-secondary {
+      padding: 0.65rem 1.2rem;
+      border-radius: 999px;
+      background: transparent;
+      border: 1px solid var(--color-primary);
+      color: var(--color-primary);
+      font-weight: 500;
+      cursor: pointer;
+      font-size: 0.9rem;
+    }
+
+    .hero-note {
+      margin-top: 0.9rem;
+      font-size: 0.85rem;
+      color: var(--color-text-soft);
+    }
+
+    .hero-card {
+      background: var(--color-white);
+      border-radius: var(--radius);
+      padding: 1.1rem 1rem;
+      box-shadow: var(--shadow-soft);
+      font-size: 0.9rem;
+    }
+
+    .hero-card h3 {
+      font-size: 1rem;
+      margin-bottom: 0.4rem;
+      color: var(--color-primary);
+    }
+
+    .hero-card ul {
+      list-style: none;
+      margin-top: 0.4rem;
+    }
+
+    .hero-card li {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 0.35rem;
+      color: var(--color-text-soft);
+    }
+
+    .hero-card li span:first-child {
+      font-weight: 500;
+      color: var(--color-text-main);
+    }
+
+    .hero-tagline {
+      margin-top: 0.5rem;
+      font-size: 0.8rem;
+      color: var(--color-text-soft);
+    }
+
+    /* Secciones generales */
+    .section-title {
+      font-size: 1.3rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .section-subtitle {
+      font-size: 0.9rem;
+      color: var(--color-text-soft);
+      margin-bottom: 1rem;
+    }
+
+    /* Servicios */
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 1rem;
+    }
+
+    .card {
+      background: var(--color-white);
+      border-radius: var(--radius);
+      padding: 1rem;
+      box-shadow: 0 4px 12px rgba(15, 23, 42, 0.06);
+      font-size: 0.9rem;
+    }
+
+    .card h3 {
+      font-size: 1rem;
+      margin-bottom: 0.4rem;
+      color: var(--color-primary);
+    }
+
+    .card p {
+      color: var(--color-text-soft);
+      margin-bottom: 0.4rem;
+    }
+
+    .chip {
+      display: inline-block;
+      font-size: 0.75rem;
+      background: var(--color-primary-soft);
+      color: var(--color-primary);
+      padding: 0.15rem 0.5rem;
+      border-radius: 999px;
+      margin-right: 0.2rem;
+      margin-top: 0.2rem;
+    }
+
+    /* Quiénes somos */
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1.1fr 1fr;
+      gap: 1.5rem;
+      align-items: flex-start;
+    }
+
+    .about-highlight {
+      background: var(--color-primary-soft);
+      border-radius: var(--radius);
+      padding: 0.9rem;
+      font-size: 0.87rem;
+      color: var(--color-text-soft);
+    }
+
+    .about-highlight strong {
+      color: var(--color-primary);
+    }
+
+    /* Proceso */
+    .steps {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 0.9rem;
+      font-size: 0.88rem;
+    }
+
+    .step {
+      background: var(--color-white);
+      border-radius: var(--radius);
+      padding: 0.8rem 0.9rem;
+      box-shadow: 0 4px 10px rgba(15, 23, 42, 0.04);
+    }
+
+    .step-number {
+      width: 24px;
+      height: 24px;
+      border-radius: 999px;
+      background: var(--color-primary-soft);
+      color: var(--color-primary);
+      font-size: 0.8rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 0.3rem;
+      font-weight: 600;
+    }
+
+    .step h3 {
+      font-size: 0.95rem;
+      margin-bottom: 0.2rem;
+    }
+
+    /* Testimonios / Confianza */
+    .trust-grid {
+      display: grid;
+      grid-template-columns: 1.2fr 1fr;
+      gap: 1rem;
+    }
+
+    .testimonial {
+      background: var(--color-white);
+      border-radius: var(--radius);
+      padding: 0.9rem;
+      font-size: 0.9rem;
+      box-shadow: 0 4px 10px rgba(15, 23, 42, 0.05);
+    }
+
+    .testimonial p {
+      color: var(--color-text-soft);
+      font-style: italic;
+      margin-bottom: 0.4rem;
+    }
+
+    .testimonial span {
+      font-size: 0.8rem;
+      color: var(--color-text-main);
+      font-weight: 500;
+    }
+
+    .credentials {
+      font-size: 0.86rem;
+      color: var(--color-text-soft);
+    }
+
+    .credentials ul {
+      list-style: none;
+      margin-top: 0.5rem;
+    }
+
+    .credentials li::before {
+      content: "• ";
+      color: var(--color-primary);
+    }
+
+    /* Planes */
+    .pricing-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+      gap: 1rem;
+    }
+
+    .price-tag {
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--color-primary);
+      margin-bottom: 0.3rem;
+    }
+
+    .price-note {
+      font-size: 0.8rem;
+      color: var(--color-text-soft);
+    }
+
+    .price-features {
+      list-style: none;
+      margin-top: 0.5rem;
+      font-size: 0.85rem;
+      color: var(--color-text-soft);
+    }
+
+    .price-features li::before {
+      content: "– ";
+    }
+
+    /* FAQ */
+    .faq-item {
+      background: var(--color-white);
+      border-radius: var(--radius);
+      padding: 0.7rem 0.9rem;
+      margin-bottom: 0.5rem;
+      font-size: 0.9rem;
+      box-shadow: 0 2px 5px rgba(15, 23, 42, 0.04);
+    }
+
+    .faq-item h3 {
+      font-size: 0.95rem;
+      margin-bottom: 0.2rem;
+      color: var(--color-primary);
+    }
+
+    .faq-item p {
+      color: var(--color-text-soft);
+    }
+
+    /* Contacto */
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1.1fr 1fr;
+      gap: 1.3rem;
+    }
+
+    form {
+      background: var(--color-white);
+      border-radius: var(--radius);
+      padding: 1rem;
+      box-shadow: var(--shadow-soft);
+      font-size: 0.9rem;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 0.2rem;
+      font-size: 0.85rem;
+      color: var(--color-text-main);
+    }
+
+    input, textarea, select {
+      width: 100%;
+      padding: 0.45rem 0.55rem;
+      margin-bottom: 0.7rem;
+      border-radius: 6px;
+      border: 1px solid #d1d5db;
+      font-family: inherit;
+      font-size: 0.9rem;
+    }
+
+    textarea {
+      resize: vertical;
+      min-height: 90px;
+    }
+
+    .contact-info {
+      font-size: 0.9rem;
+      color: var(--color-text-soft);
+    }
+
+    .contact-info p {
+      margin-bottom: 0.4rem;
+    }
+
+    .whatsapp-button {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      padding: 0.55rem 1rem;
+      border-radius: 999px;
+      background: #25d366;
+      color: #fff;
+      font-size: 0.9rem;
+      margin-top: 0.4rem;
+      font-weight: 600;
+    }
+
+    .whatsapp-button span {
+      font-size: 1.1rem;
+    }
+
+    footer {
+      margin-top: 2rem;
+      padding: 1rem 1.5rem 1.5rem;
+      background: var(--color-white);
+      font-size: 0.8rem;
+      color: var(--color-text-soft);
+    }
+
+    footer .footer-inner {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      gap: 0.4rem;
+    }
+
+    footer a {
+      color: var(--color-primary);
+      text-decoration: underline;
+    }
+
+    @media (max-width: 820px) {
+      .hero,
+      .about-grid,
+      .trust-grid,
+      .contact-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .nav-links {
+        display: none;
+      }
+      main {
+        padding: 1rem;
+      }
+      section {
+        margin: 2rem 0;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <nav class="nav">
+    <div class="logo">
+      Estudio [TU APELLIDO] &amp; Asociados
+      <span>Contabilidad &amp; Economía</span>
+    </div>
+    <div class="nav-links">
+      <a href="#servicios">Servicios</a>
+      <a href="#quienes-somos">Quiénes somos</a>
+      <a href="#planes">Honorarios</a>
+      <a href="#faq">Preguntas</a>
+      <a href="#contacto" class="btn-nav">Contactar</a>
+    </div>
+  </nav>
+</header>
+
+<main>
+  <!-- HERO -->
+  <section class="hero" id="inicio">
+    <div>
+      <div class="hero-tag">Contadora Pública + Economista para tu empresa</div>
+      <h1>Contabilidad clara, impuestos ordenados y decisiones <span>basadas en números</span>.</h1>
+      <p class="hero-subtitle">
+        Acompañamos a <strong>pymes, profesionales y emprendedores</strong> en su contabilidad
+        del día a día, planificación fiscal y análisis económico, con un lenguaje simple y sin sorpresas.
+      </p>
+      <ul class="hero-benefits">
+        <li>Atención directa con profesionales (sin derivar en pasantes).</li>
+        <li>Reportes mensuales entendibles, no solo balances técnicos.</li>
+        <li>Servicio 100% online o híbrido, según prefieras.</li>
+      </ul>
+      <div class="hero-actions">
+        <button class="btn-main" onclick="document.getElementById('contacto').scrollIntoView({behavior:'smooth'})">
+          Agendar una primera reunión sin costo
+        </button>
+        <button class="btn-secondary" onclick="document.getElementById('servicios').scrollIntoView({behavior:'smooth'})">
+          Ver servicios y honorarios
+        </button>
+      </div>
+      <p class="hero-note">
+        Primera llamada de diagnóstico de 20 minutos sin compromiso. Revisamos tu situación
+        contable y te decimos cómo podemos ayudarte.
+      </p>
+    </div>
+    <div class="hero-card">
+      <h3>¿Qué podemos hacer por tu negocio?</h3>
+      <ul>
+        <li>
+          <span>Contabilidad mensual</span>
+          <span>✔</span>
+        </li>
+        <li>
+          <span>IVA, Ganancias, Ingresos Brutos</span>
+          <span>✔</span>
+        </li>
+        <li>
+          <span>Sueldos y cargas sociales</span>
+          <span>✔</span>
+        </li>
+        <li>
+          <span>Informes económicos para decidir</span>
+          <span>✔</span>
+        </li>
+      </ul>
+      <p class="hero-tagline">
+        “Nuestra misión es que entiendas tus números y pagues lo justo, ni más ni menos.”
+      </p>
+    </div>
+  </section>
+
+  <!-- SERVICIOS -->
+  <section id="servicios">
+    <h2 class="section-title">Servicios principales</h2>
+    <p class="section-subtitle">
+      Armamos un servicio integral, pero podés contratar solo lo que tu negocio necesita hoy.
+    </p>
+    <div class="services-grid">
+      <div class="card">
+        <h3>Contabilidad mensual y cierres</h3>
+        <p>Registración, conciliaciones, armado de estados contables y reportes resumidos para la dirección.</p>
+        <span class="chip">Pymes</span><span class="chip">Comercios</span><span class="chip">Servicios</span>
+      </div>
+      <div class="card">
+        <h3>Impuestos nacionales y provinciales</h3>
+        <p>IVA, Ganancias, Ingresos Brutos, regímenes de información y planificación fiscal básica.</p>
+        <span class="chip">AFIP</span><span class="chip">AGIP / ARBA</span>
+      </div>
+      <div class="card">
+        <h3>Sueldos y cargas sociales</h3>
+        <p>Liquidación de haberes, cargas sociales, sindicatos y asesoramiento básico laboral en coordinación con tu estudio jurídico.</p>
+        <span class="chip">Pequeños equipos</span><span class="chip">Pymes</span>
+      </div>
+      <div class="card">
+        <h3>Monotributo y responsables inscriptos</h3>
+        <p>Altas, bajas, recategorizaciones, control de facturación y límites, armado de un “mapa de obligaciones”.</p>
+        <span class="chip">Profesionales</span><span class="chip">Freelancers</span>
+      </div>
+      <div class="card">
+        <h3>Informes económicos y financieros</h3>
+        <p>Análisis de márgenes, estructura de costos, proyecciones simples de caja y escenarios para tomar decisiones.</p>
+        <span class="chip">Economía aplicada</span><span class="chip">Decisiones</span>
+      </div>
+      <div class="card">
+        <h3>Constitución y reorganización societaria</h3>
+        <p>Acompañamos el diseño de tu estructura jurídica (SRL, SAS, etc.) junto con escribano y abogado de confianza.</p>
+        <span class="chip">SRL</span><span class="chip>SAS</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- QUIÉNES SOMOS -->
+  <section id="quienes-somos">
+    <h2 class="section-title">Quiénes somos</h2>
+    <p class="section-subtitle">
+      Un equipo chico, cercano, donde hablás directamente con la Contadora y el Economista.
+    </p>
+    <div class="about-grid">
+      <div>
+        <p>
+          Somos una <strong>SRL familiar</strong> formada por una Contadora Pública matriculada y un Economista
+          especializado en análisis financiero y economía aplicada a empresas.
+        </p>
+        <p>
+          Combinamos la mirada contable tradicional (cumplimiento, normas, balances) con una
+          visión económica más estratégica: márgenes, estructura de costos, flujos de fondos y decisiones de inversión.
+        </p>
+        <p>
+          Nuestro objetivo es que tengas un <strong>único equipo</strong> para:
+          <strong>cumplir con el fisco</strong> y, al mismo tiempo, <strong>entender qué dicen tus números</strong>.
+        </p>
+      </div>
+      <div class="about-highlight">
+        <p><strong>¿Qué nos diferencia?</strong></p>
+        <ul>
+          <li>Te explicamos todo en lenguaje simple, sin tecnicismos innecesarios.</li>
+          <li>No tercerizamos: tratás siempre con nosotros, no con un call center.</li>
+          <li>Armamos reportes cortos que podés leer en 5 minutos y entender.</li>
+          <li>Miramos impuestos, pero también rentabilidad y caja futura.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROCESO -->
+  <section id="proceso">
+    <h2 class="section-title">Cómo trabajamos</h2>
+    <p class="section-subtitle">
+      Un proceso simple, pensado para no complicarte la rutina.
+    </p>
+    <div class="steps">
+      <div class="step">
+        <div class="step-number">1</div>
+        <h3>Reunión inicial</h3>
+        <p>Conversamos 20–30 minutos para entender tu actividad, volumen, herramientas y obligaciones actuales.</p>
+      </div>
+      <div class="step">
+        <div class="step-number">2</div>
+        <h3>Diagnóstico</h3>
+        <p>Revisamos tu situación impositiva y contable y te señalamos riesgos, oportunidades y puntos a ordenar.</p>
+      </div>
+      <div class="step">
+        <div class="step-number">3</div>
+        <h3>Propuesta y honorarios</h3>
+        <p>Te presentamos un esquema de trabajo claro: qué hacemos nosotros, qué hacés vos y cuánto cuesta.</p>
+      </div>
+      <div class="step">
+        <div class="step-number">4</div>
+        <h3>Implementación y seguimiento</h3>
+        <p>Organizamos la documentación, definimos un calendario mensual y dejamos todo ordenado para el día a día.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONFIANZA / TESTIMONIOS -->
+  <section id="confianza">
+    <h2 class="section-title">Confianza y respaldo</h2>
+    <p class="section-subtitle">
+      Queremos relaciones de largo plazo, no “un trámite más”.
+    </p>
+    <div class="trust-grid">
+      <div class="testimonial">
+        <p>
+          “Pasamos de no entender nada a tener claro cuánto ganábamos realmente cada mes.
+          Hoy tomamos decisiones con números, no solo con intuición.”
+        </p>
+        <span>Dueño de pyme de servicios – Cliente desde 20XX</span>
+      </div>
+      <div class="credentials">
+        <p><strong>Respaldo profesional</strong></p>
+        <ul>
+          <li>Contadora Pública matriculada (CPCE – completar datos reales).</li>
+          <li>Economista con experiencia en análisis financiero y evaluación de proyectos.</li>
+          <li>Experiencia con pymes, profesionales independientes y comercios.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- PLANES / HONORARIOS -->
+  <section id="planes">
+    <h2 class="section-title">Honorarios orientativos</h2>
+    <p class="section-subtitle">
+      Los valores se ajustan a la complejidad y volumen de cada cliente. Estos montos son una referencia inicial.
+    </p>
+    <div class="pricing-grid">
+      <div class="card">
+        <h3>Profesionales y monotributo</h3>
+        <p class="price-tag">Desde ARS XX.XXX / mes</p>
+        <p class="price-note">Control de facturación, recategorizaciones, calendario de obligaciones.</p>
+        <ul class="price-features">
+          <li>Asesoramiento por mail / WhatsApp.</li>
+          <li>Recordatorios de vencimientos.</li>
+          <li>Orientación simple para organizar tus gastos.</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>Comercios y responsables inscriptos</h3>
+        <p class="price-tag">Desde ARS XX.XXX / mes</p>
+        <p class="price-note">Incluye IVA, Ganancias, Ingresos Brutos y contabilidad básica.</p>
+        <ul class="price-features">
+          <li>Informes mensuales resumidos.</li>
+          <li>Acompañamiento en inspecciones simples.</li>
+          <li>Revisión de regímenes de retención y percepción.</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>Pymes con empleados</h3>
+        <p class="price-tag">Desde ARS XX.XXX / mes</p>
+        <p class="price-note">Contabilidad + impuestos + sueldos y cargas sociales.</p>
+        <ul class="price-features">
+          <li>Reuniones periódicas de seguimiento.</li>
+          <li>Informes económicos básicos (márgenes, costos).</li>
+          <li>Coordinación con tu estudio jurídico y tu banco.</li>
+        </ul>
+      </div>
+    </div>
+    <p class="price-note" style="margin-top:0.7rem;">
+      Valores a completar según tu realidad y el mercado. Siempre te enviaremos un presupuesto detallado antes de comenzar.
+    </p>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq">
+    <h2 class="section-title">Preguntas frecuentes</h2>
+    <div class="faq-item">
+      <h3>¿Trabajan solo en forma presencial o también online?</h3>
+      <p>Podemos trabajar 100% online o combinar reuniones presenciales y virtuales, según tu comodidad.</p>
+    </div>
+    <div class="faq-item">
+      <h3>¿Qué necesito para empezar?</h3>
+      <p>
+        Básicamente, tus CUIT/CUIL, datos fiscales, acceso a AFIP y la documentación contable básica.
+        Te enviamos un listado simple para que sepas qué juntar.
+      </p>
+    </div>
+    <div class="faq-item">
+      <h3>¿Firmamos contrato de servicios?</h3>
+      <p>Sí. De esta forma quedan claros los alcances del servicio, honorarios y forma de trabajo.</p>
+    </div>
+    <div class="faq-item">
+      <h3>¿Pueden tomar clientes de cualquier provincia?</h3>
+      <p>
+        Sí, siempre que la normativa local lo permita. Contanos dónde operás y te decimos si podemos ayudarte
+        directamente o recomendar a alguien de tu jurisdicción.
+      </p>
+    </div>
+  </section>
+
+  <!-- CONTACTO -->
+  <section id="contacto">
+    <h2 class="section-title">Contacto</h2>
+    <p class="section-subtitle">
+      Contanos brevemente tu situación y coordinamos una primera reunión sin costo.
+    </p>
+    <div class="contact-grid">
+      <form>
+        <label for="nombre">Nombre y apellido</label>
+        <input type="text" id="nombre" name="nombre" placeholder="Ej: Juan Pérez" required />
+
+        <label for="email">Correo electrónico</label>
+        <input type="email" id="email" name="email" placeholder="tucorreo@ejemplo.com" required />
+
+        <label for="tipo">Tipo de actividad</label>
+        <select id="tipo" name="tipo">
+          <option value="">Seleccionar...</option>
+          <option value="profesional">Profesional / Freelancer</option>
+          <option value="comercio">Comercio</option>
+          <option value="servicios">Empresa de servicios</option>
+          <option value="industria">Industria / Pyme</option>
+          <option value="otro">Otro</option>
+        </select>
+
+        <label for="mensaje">Contanos brevemente tu caso</label>
+        <textarea id="mensaje" name="mensaje" placeholder="Ej: Tengo un comercio con 5 empleados, necesito ordenar contabilidad e impuestos."></textarea>
+
+        <button type="submit" class="btn-main" style="width:100%;">
+          Enviar consulta
+        </button>
+      </form>
+
+      <div class="contact-info">
+        <p><strong>También podés escribirnos directamente:</strong></p>
+        <p>Correo: <strong>contacto@tuestudio.com</strong></p>
+        <p>Teléfono / WhatsApp: <strong>+54 9 11 XXX XXXX</strong></p>
+        <a class="whatsapp-button" href="https://wa.me/54911XXXXXXXX" target="_blank" rel="noopener">
+          <span>💬</span> Escribir por WhatsApp
+        </a>
+        <p style="margin-top:1rem;">
+          Horario de atención: Lunes a viernes de 9 a 18 hs.
+        </p>
+        <p>
+          Zona de referencia: [Ciudad / Provincia] – Argentina.  
+          Atendemos también de forma remota a todo el país.
+        </p>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="footer-inner">
+    <div>© <span id="year"></span> Estudio [TU APELLIDO] &amp; Asociados. Todos los derechos reservados.</div>
+    <div>Este sitio tiene fines informativos. La contratación de servicios se formaliza por contrato profesional por separado.</div>
+  </div>
+</footer>
+
+<script>
+  document.getElementById("year").textContent = new Date().getFullYear();
+</script>
+
+</body>
+</html>
